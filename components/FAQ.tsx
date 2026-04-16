@@ -5,35 +5,35 @@ import { useState } from "react";
 const faqs = [
   {
     q: "Do I need a website?",
-    a: "No. The Basic and Pro plans work entirely through your Google Business Profile. You don't need a single web page to rank in the Google 3-pack. Many of our strongest results have come from businesses with no website at all. The map pack operates independently of your website — it runs on your Google profile, your reviews, and your citation authority.",
+    a: "No. Google's map pack runs entirely on your Google Business Profile — not your website. The Basic and Pro plans work without one. The Pro Plus plan requires a website because it adds full website SEO on top of map pack work.",
   },
   {
     q: "How long before I see results?",
-    a: "The map pack takes 6–12 weeks to move meaningfully. This is not ads — it's a permanent ranking that compounds over time. The businesses that commit to this process see results that grow month after month. And unlike ads, when you stop paying for ads your phone stops ringing. When you stop paying for SEO, your ranking doesn't disappear overnight — you keep the position you built.",
+    a: "Most clients see ranking movement within 6–12 weeks. The majority are in or near the 3-pack by month 3. We document your starting position on day one so you have a clear before-and-after.",
   },
   {
-    q: "What kind of businesses does this work for?",
-    a: "Any local service business where customers search Google to find help — plumbers, electricians, HVAC, roofers, landscapers, pest control, dentists, chiropractors, locksmiths, cleaning companies. If customers Google for it in your city, we can rank you for it.",
+    q: "What kind of businesses do you work with?",
+    a: "Home service businesses only — plumbers, electricians, HVAC companies, roofers, landscapers, pest control, locksmiths, and similar trades. We don't work with restaurants, gyms, or e-commerce. That focus is what makes us good at this.",
   },
   {
-    q: "What if I already have a Google Business Profile?",
-    a: "Most profiles we audit are missing 40–60% of the optimisations that drive rankings. Having a profile is step one. Having an optimised, active, citation-backed, review-rich profile with consistent weekly posts is what actually gets you into the 3-pack. The gap between \"has a profile\" and \"dominates the map pack\" is exactly what we close.",
+    q: "I already have a Google Business Profile. Does that matter?",
+    a: "Yes — it means we can start immediately. Most businesses have a profile that's incomplete, miscategorised, or poorly optimised. We audit it and rebuild it correctly. If you don't have one, we set it up as part of onboarding.",
   },
   {
     q: "What is the Friday voice update?",
-    a: "Every Friday morning you receive a 60-second voice note from us. Your ranking position this week. What your top competitor did. What we are doing about it next week. It takes 60 seconds to listen to while you're driving to a job. No login. No dashboard. No decoding a report. Just straight information, every Friday, from a real person who is actively watching your market.",
+    a: "Every Friday morning, before you start your day, you receive a 60-second voice message: your current ranking position, what your top competitor did that week, and what we're doing about it next week. No dashboards, no PDFs — a real voice, every week, without exception.",
   },
   {
-    q: "Why do you only take one client per city per vertical?",
-    a: "Because we would be ranking you against each other otherwise. If we took two plumbers in the same city, every improvement we made for one would hurt the other. We do not do that. Your market is exclusively yours for as long as you are a client. That exclusivity is one of the most valuable things we offer — and it is also why spots fill up faster than most people expect.",
+    q: "Why do you only take one client per city per trade?",
+    a: "We can't help two plumbers in the same city rank above each other — that's a conflict of interest. When you sign with us, your market is protected. We will not take a competitor in your city for the same service. Spots fill up because of this, so if your vertical is open, it's worth moving quickly.",
   },
   {
     q: "Do you guarantee results?",
-    a: "We do not guarantee a specific ranking position — no honest agency can, and anyone who does is lying to you. What we guarantee is this: every tactical lever Google uses to determine map pack rankings will be pulled in your favour, every single week. We document your starting position before we touch anything. We show you the movement every month. If we are not making progress by month 3, we will tell you why and what we are changing — not hide behind a PDF.",
+    a: "We don't make guarantees because Google controls the algorithm — and anyone who promises guaranteed rankings is not being straight with you. What we do guarantee: complete transparency, weekly updates, documented tracking from day one, and a proof-first approach where you see exactly where you stand before spending anything.",
   },
   {
     q: "Can I cancel?",
-    a: "Pro and Pro Plus are month-to-month. No contracts, no lock-ins. If you are not seeing progress after 3 months, cancel. We would rather earn your business every month by delivering results than lock you into a contract that protects us instead of you.",
+    a: "Yes. We require a 6-month minimum commitment because that's how long real SEO results take to build. After 6 months, you can cancel anytime with 30 days' notice. We've never had a client cancel who reached month 3 and saw their phone starting to ring.",
   },
 ];
 
@@ -41,49 +41,18 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faqs" className="py-16 lg:py-24 bg-dark-base">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-4">
-          <span className="text-accent-green text-sm font-bold uppercase tracking-widest">
-            Questions We Get Every Time
-          </span>
-        </div>
-        <h2 className="text-3xl lg:text-4xl font-extrabold text-dark-text text-center mb-12">
-          Frequently Asked Questions
-        </h2>
-
-        <div className="space-y-3">
+    <section id="faq">
+      <div className="container">
+        <span className="eyebrow">Questions</span>
+        <h2>Frequently Asked.</h2>
+        <div className="faq-list">
           {faqs.map((faq, i) => (
-            <div
-              key={i}
-              className={`rounded-xl border overflow-hidden transition-colors ${
-                open === i
-                  ? "border-accent-green/30 bg-dark-surface"
-                  : "border-white/7 bg-dark-surface hover:border-white/15"
-              }`}
-            >
-              <button
-                className="w-full flex items-center justify-between px-6 py-4 text-left gap-4"
-                onClick={() => setOpen(open === i ? null : i)}
-              >
-                <span className={`font-semibold text-base ${open === i ? "text-accent-green" : "text-dark-text"}`}>
-                  {faq.q}
-                </span>
-                <svg
-                  className={`w-5 h-5 flex-shrink-0 transition-all duration-200 ${open === i ? "rotate-180 text-accent-green" : "text-dark-muted"}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
+            <div key={i} className={`faq-item${open === i ? " open" : ""}`}>
+              <button className="faq-q" onClick={() => setOpen(open === i ? null : i)}>
+                {faq.q}
+                <span className="faq-toggle">+</span>
               </button>
-              {open === i && (
-                <div className="px-6 pb-5 text-sm text-dark-muted leading-relaxed border-t border-white/7 pt-4">
-                  {faq.a}
-                </div>
-              )}
+              <div className="faq-a">{faq.a}</div>
             </div>
           ))}
         </div>

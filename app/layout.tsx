@@ -1,19 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bebas_Neue, DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const bebasNeue = Bebas_Neue({
+  weight: "400",
   subsets: ["latin"],
+  variable: "--font-bebas",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmSans = DM_Sans({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-dm-sans",
+});
+
+const dmMono = DM_Mono({
+  weight: ["400", "500"],
+  subsets: ["latin"],
+  variable: "--font-dm-mono",
 });
 
 export const metadata: Metadata = {
-  title: "MapDominate — Get Your Business in the Google 3-Pack",
+  title: "MapDominate — Dominate Google Maps. Get More Calls.",
   description:
     "We build your Google Business Profile and perform local SEO to get your business ranked in the Google 3-Pack. More calls, more customers — no ads required.",
   keywords:
@@ -22,15 +30,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${bebasNeue.variable} ${dmSans.variable} ${dmMono.variable}`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

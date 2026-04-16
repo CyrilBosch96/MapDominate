@@ -14,11 +14,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const [status, setStatus] = useState<Status>("idle");
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = isOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
@@ -44,139 +40,119 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     }
   };
 
+  const inputStyle: React.CSSProperties = {
+    width: '100%',
+    background: 'var(--bg3)',
+    border: '1px solid var(--border)',
+    borderRadius: '4px',
+    padding: '10px 12px',
+    fontSize: '14px',
+    color: 'var(--white)',
+    outline: 'none',
+    fontFamily: 'inherit',
+  };
+
+  const labelStyle: React.CSSProperties = {
+    display: 'block',
+    fontSize: '11px',
+    fontFamily: 'var(--font-dm-mono), monospace',
+    letterSpacing: '.1em',
+    textTransform: 'uppercase',
+    color: 'var(--off)',
+    marginBottom: '6px',
+  };
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop */}
+    <div style={{ position: 'fixed', inset: 0, zIndex: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px' }}>
       <div
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)' }}
         onClick={onClose}
       />
-
-      {/* Modal */}
-      <div className="relative bg-dark-surface border border-white/10 rounded-2xl shadow-2xl shadow-black/50 w-full max-w-lg max-h-[90vh] overflow-y-auto">
+      <div style={{
+        position: 'relative', background: 'var(--bg2)', border: '1px solid var(--border)',
+        borderRadius: '8px', width: '100%', maxWidth: '520px', maxHeight: '90vh', overflowY: 'auto',
+      }}>
         {/* Header */}
-        <div className="sticky top-0 bg-dark-surface border-b border-white/7 px-6 py-4 flex items-center justify-between rounded-t-2xl">
+        <div style={{
+          position: 'sticky', top: 0, background: 'var(--bg2)', borderBottom: '1px solid var(--border)',
+          padding: '20px 24px', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between',
+        }}>
           <div>
-            <h2 className="text-lg font-bold text-dark-text">Book a Free Strategy Call</h2>
-            <p className="text-sm text-dark-muted">
-              15 minutes. We&apos;ll show you where you rank and how to reach the top 3.
+            <div style={{ fontFamily: 'var(--font-bebas), sans-serif', fontSize: '28px', color: 'var(--white)', lineHeight: 1, marginBottom: '4px' }}>
+              Get Your Free Diagnosis
+            </div>
+            <p style={{ fontSize: '13px', color: 'var(--off)', margin: 0 }}>
+              We&apos;ll record a 2-min video showing exactly where you rank.
             </p>
           </div>
           <button
             onClick={onClose}
-            className="text-dark-muted hover:text-dark-text transition-colors p-1"
+            style={{ background: 'none', border: 'none', color: 'var(--off)', cursor: 'pointer', fontSize: '20px', lineHeight: 1, padding: '4px' }}
           >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            ✕
           </button>
         </div>
 
-        <div className="px-6 py-6">
+        <div style={{ padding: '24px' }}>
           {status === "success" ? (
-            <div className="text-center py-8">
-              <div className="w-16 h-16 bg-accent-teal/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-accent-teal/20">
-                <svg className="w-8 h-8 text-accent-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
+            <div style={{ textAlign: 'center', padding: '32px 0' }}>
+              <div style={{ fontSize: '48px', marginBottom: '12px', color: 'var(--teal)' }}>✓</div>
+              <div style={{ fontFamily: 'var(--font-bebas), sans-serif', fontSize: '32px', color: 'var(--accent)', marginBottom: '8px' }}>
+                We Got It!
               </div>
-              <h3 className="text-xl font-bold text-dark-text mb-2">Message Received!</h3>
-              <p className="text-dark-muted mb-6">
-                We&apos;ll be in touch within 24 hours to schedule your free strategy call.
+              <p style={{ marginBottom: '24px' }}>
+                We&apos;ll be in touch within 24 hours with your personalised diagnosis video.
               </p>
-              <button
-                onClick={onClose}
-                className="bg-accent-green text-dark-base px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-yellow-300 transition-colors"
-              >
-                Close
-              </button>
+              <button className="btn-primary" onClick={onClose}>Close →</button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <div>
-                  <label className="block text-sm font-medium text-dark-muted mb-1">
-                    Your Name <span className="text-accent-red">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full bg-dark-base border border-white/10 rounded-lg px-3 py-2.5 text-sm text-dark-text placeholder-dark-muted focus:outline-none focus:ring-1 focus:ring-accent-green focus:border-accent-green/50 transition-colors"
-                    placeholder="John Smith"
-                  />
+                  <label style={labelStyle}>Your Name *</label>
+                  <input type="text" required value={form.name} placeholder="John Smith"
+                    onChange={(e) => setForm({ ...form, name: e.target.value })} style={inputStyle} />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-dark-muted mb-1">
-                    Business Name
-                  </label>
-                  <input
-                    type="text"
-                    value={form.business}
-                    onChange={(e) => setForm({ ...form, business: e.target.value })}
-                    className="w-full bg-dark-base border border-white/10 rounded-lg px-3 py-2.5 text-sm text-dark-text placeholder-dark-muted focus:outline-none focus:ring-1 focus:ring-accent-green focus:border-accent-green/50 transition-colors"
-                    placeholder="Smith Plumbing Co."
-                  />
+                  <label style={labelStyle}>Business Name</label>
+                  <input type="text" value={form.business} placeholder="Smith Plumbing"
+                    onChange={(e) => setForm({ ...form, business: e.target.value })} style={inputStyle} />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-dark-muted mb-1">
-                  Email Address <span className="text-accent-red">*</span>
-                </label>
-                <input
-                  type="email"
-                  required
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full bg-dark-base border border-white/10 rounded-lg px-3 py-2.5 text-sm text-dark-text placeholder-dark-muted focus:outline-none focus:ring-1 focus:ring-accent-green focus:border-accent-green/50 transition-colors"
-                  placeholder="john@smithplumbing.com"
-                />
+                <label style={labelStyle}>Email Address *</label>
+                <input type="email" required value={form.email} placeholder="john@smithplumbing.com"
+                  onChange={(e) => setForm({ ...form, email: e.target.value })} style={inputStyle} />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-dark-muted mb-1">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  value={form.phone}
-                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  className="w-full bg-dark-base border border-white/10 rounded-lg px-3 py-2.5 text-sm text-dark-text placeholder-dark-muted focus:outline-none focus:ring-1 focus:ring-accent-green focus:border-accent-green/50 transition-colors"
-                  placeholder="+1 (555) 000-0000"
-                />
+                <label style={labelStyle}>Phone Number</label>
+                <input type="tel" value={form.phone} placeholder="+1 (555) 000-0000"
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })} style={inputStyle} />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-dark-muted mb-1">
-                  What service do you offer? Tell us about your business.
-                </label>
-                <textarea
-                  rows={3}
-                  value={form.message}
+                <label style={labelStyle}>Your Service &amp; City</label>
+                <textarea rows={3} value={form.message}
+                  placeholder="e.g. Plumber in Manchester serving residential customers..."
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full bg-dark-base border border-white/10 rounded-lg px-3 py-2.5 text-sm text-dark-text placeholder-dark-muted focus:outline-none focus:ring-1 focus:ring-accent-green focus:border-accent-green/50 transition-colors resize-none"
-                  placeholder="e.g. I'm a plumber in Manchester serving residential customers..."
-                />
+                  style={{ ...inputStyle, resize: 'none' }} />
               </div>
 
               {status === "error" && (
-                <p className="text-sm text-accent-red bg-accent-red/10 border border-accent-red/20 px-3 py-2 rounded-lg">
-                  Something went wrong. Please try again or email us directly.
+                <p style={{ fontSize: '13px', color: 'var(--accent2)', background: 'rgba(255,107,53,0.1)', border: '1px solid rgba(255,107,53,0.2)', borderRadius: '4px', padding: '10px 12px', margin: 0 }}>
+                  Something went wrong. Please try again or email hello@mapdominate.com
                 </p>
               )}
 
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="w-full bg-accent-green hover:bg-yellow-300 disabled:opacity-50 text-dark-base font-black py-3.5 rounded-lg transition-colors text-base"
-              >
-                {status === "loading" ? "Sending..." : "Book My Free Strategy Call →"}
+              <button type="submit" disabled={status === "loading"} className="btn-primary"
+                style={{ opacity: status === "loading" ? 0.6 : 1 }}>
+                {status === "loading" ? "Sending..." : "Send My Diagnosis Request →"}
               </button>
 
-              <p className="text-xs text-dark-muted text-center">
-                No spam. We&apos;ll only use your details to get in touch about your free call.
+              <p style={{ fontSize: '12px', color: 'var(--off)', textAlign: 'center', margin: 0 }}>
+                No spam. We&apos;ll only use your details to send your free diagnosis video.
               </p>
             </form>
           )}

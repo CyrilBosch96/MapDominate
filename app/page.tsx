@@ -4,10 +4,10 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
-import Differentiator from "@/components/Differentiator";
 import Mechanism from "@/components/Mechanism";
+import Differentiator from "@/components/Differentiator";
+import Services from "@/components/Services";
 import Results from "@/components/Results";
-import SocialProof from "@/components/SocialProof";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
@@ -18,21 +18,21 @@ export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-dark-base">
+    <>
       <Navbar onContactClick={() => setModalOpen(true)} />
       <main>
         <Hero onContactClick={() => setModalOpen(true)} />
         <Problem />
-        <Differentiator onContactClick={() => setModalOpen(true)} />
         <Mechanism />
+        <Differentiator />
+        <Services />
         <Results />
-        <SocialProof />
         <Pricing onContactClick={() => setModalOpen(true)} />
         <FAQ />
         <FinalCTA onContactClick={() => setModalOpen(true)} />
       </main>
       <Footer />
       <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
-    </div>
+    </>
   );
 }
