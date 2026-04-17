@@ -98,6 +98,7 @@ export default function Pricing({ onContactClick }: PricingProps) {
 
           {/* LOCAL SEO PREPAID */}
           <div className="pricing-card">
+            <div className="featured-tag">Best Value</div>
             <div className="pricing-plan">Local SEO Prepaid</div>
 
             <div style={{ marginBottom: '4px' }}>
