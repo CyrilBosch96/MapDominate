@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "What kind of businesses do you work with?",
-    a: "Home service businesses only — plumbers, electricians, HVAC companies, roofers, landscapers, pest control, locksmiths, and similar trades. We don't work with restaurants, gyms, or e-commerce. That focus is what makes us good at this.",
+    a: "Plumbers and HVAC companies only. We don't work with electricians, roofers, restaurants, gyms, or anyone else. That focus is exactly what makes us good at this — we know your seasonality, your search patterns, and your customers better than any generalist agency ever could.",
   },
   {
     q: "I already have a Google Business Profile. Does that matter?",

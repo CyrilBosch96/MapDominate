@@ -36,9 +36,10 @@ export default function Differentiator() {
 
           <div className="diff-card">
             <div className="diff-icon">🔧</div>
-            <h3>Home Service Businesses Only</h3>
-            <p>We don&apos;t work with restaurants or gyms. We work exclusively with plumbers, HVAC,
-            electricians, and roofers. Your strategy is built around your market — never a template.</p>
+            <h3>Plumbers &amp; HVAC Only</h3>
+            <p>We work exclusively with plumbers and HVAC companies. That focus means we know things a
+            generalist agency never will — your seasonality, your search patterns, your customers.
+            Your strategy is built around your market — never a template.</p>
             <div className="diff-number">04</div>
           </div>
 

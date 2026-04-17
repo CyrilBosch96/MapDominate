@@ -1,8 +1,5 @@
 export default function Results() {
-  const industries = [
-    'Plumbers', 'Electricians', 'HVAC', 'Roofers', 'Landscapers',
-    'Pest Control', 'Dentists', 'Chiropractors', 'Locksmiths', 'Cleaning Companies',
-  ];
+  const industries = ['Plumbers', 'HVAC Companies'];
 
   return (
     <section id="results">
