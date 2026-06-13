@@ -21,11 +21,34 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.mapdominate.com"),
   title: "MapDominate — Dominate Google Maps. Get More Calls.",
   description:
     "We build your Google Business Profile and perform local SEO to get your business ranked in the Google 3-Pack. More calls, more customers — no ads required.",
   keywords:
     "local SEO, Google 3-pack, Google Business Profile, GBP optimisation, map pack ranking, local business SEO",
+  alternates: {
+    canonical: "https://www.mapdominate.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  openGraph: {
+    type: "website",
+    url: "https://www.mapdominate.com",
+    title: "MapDominate — Dominate Google Maps. Get More Calls.",
+    description:
+      "We rank your business in the Google 3-Pack. More calls, more customers — no ads.",
+    siteName: "MapDominate",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MapDominate — Dominate Google Maps.",
+    description:
+      "We rank your business in the Google 3-Pack. More calls, more customers — no ads.",
+  },
 };
 
 export default function RootLayout({

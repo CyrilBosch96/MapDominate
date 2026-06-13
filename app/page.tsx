@@ -14,11 +14,27 @@ import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "MapDominate",
+  url: "https://www.mapdominate.com",
+  description:
+    "Local SEO agency specialising in Google Maps 3-Pack ranking for plumbers and HVAC businesses.",
+  areaServed: "United Kingdom",
+  serviceType: "Local SEO",
+  priceRange: "££",
+};
+
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar onContactClick={() => setModalOpen(true)} />
       <main>
         <Hero onContactClick={() => setModalOpen(true)} />
