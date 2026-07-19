@@ -82,7 +82,7 @@ export default async function Image() {
                 fontFamily: "sans-serif",
               }}
             >
-              GOOGLE MAPS RANKING
+              WEBSITES &amp; LOCAL SEO
             </span>
           </div>
         </div>
@@ -100,8 +100,8 @@ export default async function Image() {
             flexDirection: "column",
           }}
         >
-          <span>DOMINATE GOOGLE MAPS.</span>
-          <span style={{ color: "#e8ff47" }}>GET MORE CALLS.</span>
+          <span>YOUR WEBSITE IS</span>
+          <span style={{ color: "#e8ff47" }}>COSTING YOU CUSTOMERS.</span>
         </div>
 
         {/* Subtext */}
@@ -114,8 +114,8 @@ export default async function Image() {
             display: "flex",
           }}
         >
-          We rank your business in the Google 3-Pack — so your phone rings, not
-          your competitor&apos;s.
+          We build fast, mobile-ready websites and Google Business Profiles that turn
+          searches into phone calls.
         </div>
 
         {/* Stats row */}
@@ -129,9 +129,9 @@ export default async function Image() {
           }}
         >
           {[
-            ["70%", "of clicks go to top 3"],
-            ["3×", "more inbound calls"],
-            ["6–12 wks", "to first results"],
+            ["75%", "judge credibility by your website"],
+            ["3–5s", "before a slow site loses a visitor"],
+            ["2×", "more inbound calls"],
             ["1", "client per city per trade"],
           ].map(([num, label]) => (
             <div

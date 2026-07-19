@@ -1,68 +1,32 @@
+const steps = [
+  { num: "01", tag: "FREE · NO PITCH", title: "We show you exactly what's costing you customers", desc: "Before you spend anything, we record a 2-minute personalized video walking through your current website (or lack of one), what's broken, and what it's costing you in lost calls. Free. No pitch. Just the truth." },
+  { num: "02", tag: "WEEK 1–2", title: "We build a site that actually converts", desc: "We design and launch a fast, mobile-ready website built around one goal: getting customers to call or book. No templates that look like everyone else's — a site built for your business and your area." },
+  { num: "03", tag: "ONGOING (TIER-DEPENDENT)", title: "We keep you visible, not just live", desc: "Depending on your plan, we optimize your Google Business Profile, publish fresh content, and build local SEO signals so you keep showing up when people search — not just the week your site launches." },
+  { num: "04", tag: "MONTH 1–3", title: "Your phone starts ringing", desc: "We track calls and site visits from day one. By month 2–3, most clients see a clear jump in inbound calls compared to their old site — or no site at all." },
+];
+
 export default function Mechanism() {
   return (
-    <section id="how">
-      <div className="container">
-        <span className="eyebrow">How It Works</span>
-        <h2>Simple Process.<br />Real Results.</h2>
-        <div className="steps">
-
-          <div className="step">
-            <div className="step-num-wrap">
-              <div className="step-num">01</div>
-              <div className="step-line"></div>
+    <div id="how-it-works">
+      <div className="how-inner">
+        <div className="how-heading-wrap">
+          <h2>Simple process. Real results.</h2>
+        </div>
+        <div data-reveal-group="scroll" className="steps2">
+          {steps.map((step, i) => (
+            <div key={step.num} data-reveal="fade-up" data-idx={i} className="step-row">
+              <div>
+                <div className="step-num2">{step.num}</div>
+                <div className="step-tag2">{step.tag}</div>
+              </div>
+              <div>
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+              </div>
             </div>
-            <div className="step-body">
-              <span className="step-tag">Free · No pitch</span>
-              <h3>We Show You Exactly Where You Stand</h3>
-              <p>Before you spend anything, we record a 2-minute personalised video showing your current
-              Google ranking, your top 3 competitors, and exactly what it would take to move you into
-              the top 3. Free. No pitch. Just the truth.</p>
-            </div>
-          </div>
-
-          <div className="step">
-            <div className="step-num-wrap">
-              <div className="step-num">02</div>
-              <div className="step-line"></div>
-            </div>
-            <div className="step-body">
-              <span className="step-tag">Week 1</span>
-              <h3>We Build Your Google Presence</h3>
-              <p>We audit and rebuild your Google Business Profile from the ground up — every field,
-              every category, every service area. We build citations across 50+ directories and set up
-              automated review requests so your rankings start climbing from day one.</p>
-            </div>
-          </div>
-
-          <div className="step">
-            <div className="step-num-wrap">
-              <div className="step-num">03</div>
-              <div className="step-line"></div>
-            </div>
-            <div className="step-body">
-              <span className="step-tag">Every Friday</span>
-              <h3>A Real Voice Updates You Every Week</h3>
-              <p>Every Friday morning, before you start your day, you receive a 60-second voice update —
-              ranking position, what your top competitor did, what we&apos;re doing about it. No dashboards.
-              No PDFs. A real person, every week, without fail.</p>
-            </div>
-          </div>
-
-          <div className="step">
-            <div className="step-num-wrap">
-              <div className="step-num">04</div>
-            </div>
-            <div className="step-body">
-              <span className="step-tag">Month 1–3</span>
-              <h3>Your Phone Starts Ringing</h3>
-              <p>Most clients see their first ranking movement in 6–12 weeks. By month 3, the majority
-              are in or near the 3-pack. We report on one metric: how many customers called you from
-              Google this month versus last month.</p>
-            </div>
-          </div>
-
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

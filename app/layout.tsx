@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, DM_Sans, DM_Mono } from "next/font/google";
+import { Bebas_Neue, DM_Sans, DM_Mono, Sora, Inter } from "next/font/google";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -20,13 +20,25 @@ const dmMono = DM_Mono({
   variable: "--font-dm-mono",
 });
 
+const sora = Sora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sora",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.mapdominate.com"),
-  title: "MapDominate — Dominate Google Maps. Get More Calls.",
+  title: "MapDominate — Websites & Local SEO for Salons, Spas & Gyms.",
   description:
-    "We build your Google Business Profile and perform local SEO to get your business ranked in the Google 3-Pack. More calls, more customers — no ads required.",
+    "We build fast, mobile-ready websites and optimize Google Business Profiles for hair salons, pet spas, and gyms — turning searches into phone calls. Free website audit.",
   keywords:
-    "local SEO, Google 3-pack, Google Business Profile, GBP optimisation, map pack ranking, local business SEO",
+    "salon website design, spa website design, gym website design, local SEO, Google Business Profile optimization, small business website builder, local service business marketing",
   alternates: {
     canonical: "https://www.mapdominate.com",
   },
@@ -38,16 +50,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.mapdominate.com",
-    title: "MapDominate — Dominate Google Maps. Get More Calls.",
+    title: "MapDominate — Websites & Local SEO for Salons, Spas & Gyms.",
     description:
-      "We rank your business in the Google 3-Pack. More calls, more customers — no ads.",
+      "We build fast, mobile-ready websites and Google Business Profiles that turn searches into phone calls.",
     siteName: "MapDominate",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MapDominate — Dominate Google Maps.",
+    title: "MapDominate — Websites & Local SEO for Salons, Spas & Gyms.",
     description:
-      "We rank your business in the Google 3-Pack. More calls, more customers — no ads.",
+      "We build fast, mobile-ready websites and Google Business Profiles that turn searches into phone calls.",
   },
 };
 
@@ -57,7 +69,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bebasNeue.variable} ${dmSans.variable} ${dmMono.variable}`}
+      className={`${bebasNeue.variable} ${dmSans.variable} ${dmMono.variable} ${sora.variable} ${inter.variable}`}
     >
       <body>{children}</body>
     </html>
