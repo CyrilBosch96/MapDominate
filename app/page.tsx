@@ -37,36 +37,6 @@ export default function Home() {
     const root = rootRef.current;
     if (!root) return;
 
-    type Kind = "fade-up" | "scale";
-    const prep = (el: HTMLElement) => {
-      const kind = el.getAttribute("data-reveal") as Kind | null;
-      el.style.opacity = "0";
-      el.style.transform = kind === "scale" ? "scale(0.94)" : "translateY(24px)";
-      el.style.transition = "opacity 0.45s ease, transform 0.45s ease";
-    };
-    const reveal = (el: HTMLElement, idx: number) => {
-      const delay = (parseInt(el.getAttribute("data-idx") || "", 10) || idx || 0) * 70;
-      setTimeout(() => {
-        el.style.opacity = "1";
-        el.style.transform = "none";
-      }, delay);
-    };
-
-    root.querySelectorAll<HTMLElement>("[data-reveal]").forEach(prep);
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const items = entry.target.querySelectorAll<HTMLElement>("[data-reveal]");
-          items.forEach((el, i) => reveal(el, i));
-          io.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.15 }
-    );
-    root.querySelectorAll<HTMLElement>('[data-reveal-group="scroll"]').forEach((g) => io.observe(g));
-
     const glows = Array.from(root.querySelectorAll<HTMLElement>("[data-parallax]")).map((el) => ({
       el,
       base: el.style.transform || "",
@@ -114,7 +84,6 @@ export default function Home() {
 
     return () => {
       window.removeEventListener("scroll", onScroll);
-      io.disconnect();
       triggers.forEach((st) => st.kill());
     };
   }, []);

@@ -1,5 +1,7 @@
 "use client";
 
+import { RevealGroup, RevealItem } from "./Reveal";
+
 interface PricingProps {
   onContactClick: () => void;
 }
@@ -58,12 +60,11 @@ export default function Pricing({ onContactClick }: PricingProps) {
             ongoing work, not a one-time fix.
           </p>
         </div>
-        <div data-reveal-group="scroll" className="pricing-grid2">
-          {pricingTiers.map((tier, i) => (
-            <div
+        <RevealGroup className="pricing-grid2">
+          {pricingTiers.map((tier) => (
+            <RevealItem
               key={tier.name}
-              data-reveal="scale"
-              data-idx={i}
+              kind="scale"
               className={`pricing-card2${tier.featured ? " featured" : ""}`}
             >
               {tier.featured && <div className="pricing-featured-tag">MOST POPULAR</div>}
@@ -82,9 +83,9 @@ export default function Pricing({ onContactClick }: PricingProps) {
               >
                 Get Started →
               </button>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </div>
   );

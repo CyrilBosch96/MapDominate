@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import WordReveal from "./WordReveal";
+import { RevealGroup, RevealItem } from "./Reveal";
 import { INTRO_TOTAL_MS, willIntroPlay } from "@/lib/introTiming";
 
 interface HeroProps {
@@ -135,14 +136,14 @@ export default function Hero({ onContactClick }: HeroProps) {
           <div data-parallax="-0.26" className="hero-badge-calls">+180% calls in 90 days</div>
         </motion.div>
 
-        <div data-reveal-group="scroll" className="hero-stats-grid">
-          {stats.map((s, i) => (
-            <div key={s.value} data-reveal="scale" data-idx={i} className="hero-stat-tile">
+        <RevealGroup className="hero-stats-grid">
+          {stats.map((s) => (
+            <RevealItem key={s.value} kind="scale" className="hero-stat-tile">
               <div className="hero-stat-value">{s.value}</div>
               <div className="hero-stat-label">{s.label}</div>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </>
   );

@@ -1,3 +1,5 @@
+import { RevealGroup, RevealItem } from "./Reveal";
+
 const services = [
   { title: "Custom Website Build", desc: "Fast, mobile-first, built to convert visitors into calls and bookings." },
   { title: "Headless WordPress Setup", desc: "A modern, fast front-end connected to WordPress on the back end, so you can keep publishing without a developer." },
@@ -14,14 +16,14 @@ export default function Services() {
         <div className="services-heading-wrap">
           <h2>Everything your business needs to get found — and get called.</h2>
         </div>
-        <div data-reveal-group="scroll" className="services-grid2">
-          {services.map((svc, i) => (
-            <div key={svc.title} data-reveal="fade-up" data-idx={i} className="service-card2">
+        <RevealGroup className="services-grid2">
+          {services.map((svc) => (
+            <RevealItem key={svc.title} className="service-card2">
               <h3>{svc.title}</h3>
               <p>{svc.desc}</p>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import WordReveal from "./WordReveal";
+import { RevealGroup, RevealItem } from "./Reveal";
 
 const problemWords = [
   { text: "Your", target: "#fff" },
@@ -60,15 +61,15 @@ export default function Problem() {
           more legitimate.
         </p>
       </div>
-      <div data-reveal-group="scroll" className="problem-grid2">
-        {cards.map((c, i) => (
-          <div key={c.title} data-reveal="fade-up" data-idx={i} className="problem-card2">
+      <RevealGroup className="problem-grid2">
+        {cards.map((c) => (
+          <RevealItem key={c.title} className="problem-card2">
             {c.icon}
             <h3>{c.title}</h3>
             <p>{c.desc}</p>
-          </div>
+          </RevealItem>
         ))}
-      </div>
+      </RevealGroup>
     </section>
   );
 }

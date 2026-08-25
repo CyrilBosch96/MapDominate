@@ -261,8 +261,7 @@ footer { border-top: 1px solid var(--border); padding: 56px 32px 40px; backgroun
 .footer-col2 a:hover { color: var(--white); }
 .footer-bottom2 { max-width: 1120px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid var(--border); font-size: 13px; color: #4b5652; }
 
-/* ── REVEAL / PARALLAX BASE ───────────────────────── */
-[data-reveal] { will-change: opacity, transform; }
+/* ── PARALLAX BASE ─────────────────────────────────── */
 
 /* ── RESPONSIVE ───────────────────────────────────── */
 @media (max-width: 900px) {

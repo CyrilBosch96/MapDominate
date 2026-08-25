@@ -1,3 +1,5 @@
+import { RevealGroup, RevealItem } from "./Reveal";
+
 const whyUs = [
   { title: "We build for calls, not just looks", desc: "Every site we build is structured around getting a customer to pick up the phone or book online — clear number, clear hours, clear reason to choose you." },
   { title: "Website + Google, not website alone", desc: "A great site with a weak Google Business Profile still loses to a mediocre site with a strong one. We build both to work together." },
@@ -12,17 +14,17 @@ export default function Differentiator() {
       <div className="whyus-heading-wrap">
         <h2>A website alone isn&apos;t a strategy. Here&apos;s the difference.</h2>
       </div>
-      <div data-reveal-group="scroll" className="whyus-grid">
-        {whyUs.map((w, i) => (
-          <div key={w.title} data-reveal="scale" data-idx={i} className="whyus-card">
+      <RevealGroup className="whyus-grid">
+        {whyUs.map((w) => (
+          <RevealItem key={w.title} kind="scale" className="whyus-card">
             <div className="whyus-icon">
               <span className="whyus-icon-dot"></span>
             </div>
             <h3>{w.title}</h3>
             <p>{w.desc}</p>
-          </div>
+          </RevealItem>
         ))}
-      </div>
+      </RevealGroup>
     </section>
   );
 }

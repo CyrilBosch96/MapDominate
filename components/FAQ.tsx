@@ -1,3 +1,5 @@
+import { RevealGroup, RevealItem } from "./Reveal";
+
 const faqs = [
   {
     q: "Do I need to already have a website?",
@@ -39,17 +41,19 @@ export default function FAQ() {
       <div className="faq-heading-wrap">
         <h2>Frequently asked questions</h2>
       </div>
-      <div className="faq-list2">
+      <RevealGroup className="faq-list2" stagger={0.06}>
         {faqs.map((faq) => (
-          <details key={faq.q} className="faq-item2">
-            <summary className="faq-q2">
-              {faq.q}
-              <span className="faq-plus">+</span>
-            </summary>
-            <p>{faq.a}</p>
-          </details>
+          <RevealItem key={faq.q}>
+            <details className="faq-item2">
+              <summary className="faq-q2">
+                {faq.q}
+                <span className="faq-plus">+</span>
+              </summary>
+              <p>{faq.a}</p>
+            </details>
+          </RevealItem>
         ))}
-      </div>
+      </RevealGroup>
     </section>
   );
 }

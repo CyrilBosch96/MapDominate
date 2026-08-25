@@ -1,3 +1,5 @@
+import { RevealGroup, RevealItem } from "./Reveal";
+
 const steps = [
   { num: "01", tag: "FREE · NO PITCH", title: "We show you exactly what's costing you customers", desc: "Before you spend anything, we record a 2-minute personalized video walking through your current website (or lack of one), what's broken, and what it's costing you in lost calls. Free. No pitch. Just the truth." },
   { num: "02", tag: "WEEK 1–2", title: "We build a site that actually converts", desc: "We design and launch a fast, mobile-ready website built around one goal: getting customers to call or book. No templates that look like everyone else's — a site built for your business and your area." },
@@ -12,9 +14,9 @@ export default function Mechanism() {
         <div className="how-heading-wrap">
           <h2>Simple process. Real results.</h2>
         </div>
-        <div data-reveal-group="scroll" className="steps2">
-          {steps.map((step, i) => (
-            <div key={step.num} data-reveal="fade-up" data-idx={i} className="step-row">
+        <RevealGroup className="steps2">
+          {steps.map((step) => (
+            <RevealItem key={step.num} className="step-row">
               <div>
                 <div className="step-num2">{step.num}</div>
                 <div className="step-tag2">{step.tag}</div>
@@ -23,9 +25,9 @@ export default function Mechanism() {
                 <h3>{step.title}</h3>
                 <p>{step.desc}</p>
               </div>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </div>
   );

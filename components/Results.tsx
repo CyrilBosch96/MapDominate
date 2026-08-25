@@ -1,3 +1,5 @@
+import { RevealGroup, RevealItem } from "./Reveal";
+
 const beforeList = [
   "Outdated or no website at all",
   "Customers bounce before they even see your services",
@@ -20,8 +22,8 @@ export default function Results() {
       <div className="ba-heading-wrap">
         <h2>Before and after MapDominate.</h2>
       </div>
-      <div data-reveal-group="scroll" className="ba-grid2">
-        <div data-reveal="fade-up" data-idx="0" className="ba-card">
+      <RevealGroup className="ba-grid2">
+        <RevealItem className="ba-card">
           <div className="ba-card-label">Before</div>
           {beforeList.map((b) => (
             <div key={b} className="ba-row">
@@ -29,8 +31,8 @@ export default function Results() {
               <span className="ba-row-text">{b}</span>
             </div>
           ))}
-        </div>
-        <div data-reveal="fade-up" data-idx="1" className="ba-card after">
+        </RevealItem>
+        <RevealItem className="ba-card after">
           <div className="ba-card-label">After</div>
           {afterList.map((a) => (
             <div key={a} className="ba-row">
@@ -38,8 +40,8 @@ export default function Results() {
               <span className="ba-row-text">{a}</span>
             </div>
           ))}
-        </div>
-      </div>
+        </RevealItem>
+      </RevealGroup>
       <div className="industries2">
         Works for: <strong>Hair Salons · Pet Spas · Gyms</strong>
       </div>
