@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import IntroAnimation from "@/components/IntroAnimation";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
@@ -52,13 +53,6 @@ export default function Home() {
     };
 
     root.querySelectorAll<HTMLElement>("[data-reveal]").forEach(prep);
-
-    root.querySelectorAll<HTMLElement>('[data-reveal-group="load"]').forEach((group) => {
-      const items = group.hasAttribute("data-reveal")
-        ? [group]
-        : Array.from(group.querySelectorAll<HTMLElement>("[data-reveal]"));
-      items.forEach((el, i) => reveal(el, i));
-    });
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -127,6 +121,7 @@ export default function Home() {
 
   return (
     <div ref={rootRef}>
+      <IntroAnimation />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -1,4 +1,9 @@
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
 import WordReveal from "./WordReveal";
+import { INTRO_TOTAL_MS, willIntroPlay } from "@/lib/introTiming";
 
 interface HeroProps {
   onContactClick: () => void;
@@ -29,33 +34,75 @@ const stats = [
   { value: "1", label: "client per city per trade" },
 ];
 
+const EASE = [0.16, 1, 0.3, 1] as const;
+
+// custom = the base delay (seconds) before this group starts — 0 on a
+// repeat page view this session, or the intro overlay's total runtime if
+// it's about to play, so the reveal is timed to start right as the
+// curtain lifts instead of playing invisibly underneath it.
+const textGroupVariants = {
+  hidden: {},
+  visible: (delaySec: number) => ({
+    transition: { staggerChildren: 0.12, delayChildren: delaySec },
+  }),
+};
+
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE } },
+};
+
+const panelVariants = {
+  hidden: { opacity: 0, scale: 0.94 },
+  visible: (delaySec: number) => ({
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.6, ease: EASE, delay: delaySec + 0.3 },
+  }),
+};
+
 export default function Hero({ onContactClick }: HeroProps) {
+  const [delaySec] = useState(() => (willIntroPlay() ? INTRO_TOTAL_MS / 1000 : 0));
+
   return (
     <>
-      <div id="hero" data-reveal-group="load">
+      <div id="hero">
         <div data-parallax="0.035" className="hero-glow2" style={{ transform: "translateX(-50%)" }}></div>
         <div data-parallax="0.02" style={{ position: "relative" }}>
-          <div data-reveal="fade-up" data-idx="0" className="hero-tag2">
-            <span className="hero-tag2-dot"></span>
-            GOOGLE MAPS RANKING SPECIALISTS
-          </div>
-          <div data-reveal="fade-up" data-idx="1">
-            <WordReveal id="gsap-hero-heading" as="h1" className="hero-h1-2" words={heroWords} />
-          </div>
-          <p data-reveal="fade-up" data-idx="2" className="hero-sub2">
-            A broken or outdated website doesn&apos;t just look bad — it&apos;s the reason customers scroll
-            past you to your competitor. We build fast, mobile-ready websites and Google Business Profiles
-            that turn searches into phone calls.
-          </p>
-          <div data-reveal="fade-up" data-idx="3" className="hero-actions2">
-            <button className="btn-pill-solid lg" onClick={onContactClick}>Get Your Free Website Audit →</button>
-            <a href="#how-it-works" className="btn-pill-outline">See how it works</a>
-          </div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            custom={delaySec}
+            variants={textGroupVariants}
+          >
+            <motion.div variants={fadeUpVariants} className="hero-tag2">
+              <span className="hero-tag2-dot"></span>
+              GOOGLE MAPS RANKING SPECIALISTS
+            </motion.div>
+            <motion.div variants={fadeUpVariants}>
+              <WordReveal id="gsap-hero-heading" as="h1" className="hero-h1-2" words={heroWords} />
+            </motion.div>
+            <motion.p variants={fadeUpVariants} className="hero-sub2">
+              A broken or outdated website doesn&apos;t just look bad — it&apos;s the reason customers scroll
+              past you to your competitor. We build fast, mobile-ready websites and Google Business Profiles
+              that turn searches into phone calls.
+            </motion.p>
+            <motion.div variants={fadeUpVariants} className="hero-actions2">
+              <button className="btn-pill-solid lg" onClick={onContactClick}>Get Your Free Website Audit →</button>
+              <a href="#how-it-works" className="btn-pill-outline">See how it works</a>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
       <div className="hero-panel-wrap">
-        <div data-reveal-group="load" data-reveal="scale" data-idx="4" className="hero-panel">
+        <motion.div
+          className="hero-panel"
+          initial="hidden"
+          animate="visible"
+          custom={delaySec}
+          variants={panelVariants}
+        >
           <div data-parallax="0.04" className="hero-panel-glow-a"></div>
           <div data-parallax="-0.03" className="hero-panel-glow-b"></div>
           <div data-parallax="-0.16" className="mockup-card">
@@ -86,7 +133,7 @@ export default function Hero({ onContactClick }: HeroProps) {
             </div>
           </div>
           <div data-parallax="-0.26" className="hero-badge-calls">+180% calls in 90 days</div>
-        </div>
+        </motion.div>
 
         <div data-reveal-group="scroll" className="hero-stats-grid">
           {stats.map((s, i) => (
