@@ -7,7 +7,7 @@ export const BUSINESS = {
   email: "cyril@mapdominate.com",
   // Empty = the Contact page shows no address line. Fill in before the
   // Razorpay international-payments review.
-  address: "",
+  address: "Coimbatore, Tamil Nadu",
   country: "India",
   site: "https://www.mapdominate.com",
   policiesUpdated: "October 29, 2026",
