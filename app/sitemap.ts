@@ -30,5 +30,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     blogIndex,
     ...postEntries,
+    ...["terms", "privacy", "refund-policy", "contact"].map((path) => ({
+      url: `https://www.mapdominate.com/${path}`,
+      lastModified: new Date("2026-10-29"),
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
+    })),
   ];
 }

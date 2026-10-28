@@ -23,7 +23,7 @@ const jsonLd = {
   name: "MapDominate",
   url: "https://www.mapdominate.com",
   description:
-    "Website design and local SEO agency specializing in fast, conversion-ready websites and Google Business Profile optimization for hair salons, pet spas, and gyms.",
+    "Website design and local SEO agency specializing in fast, conversion-ready websites and Google Business Profile optimization for local service businesses such as landscapers, salons and gyms.",
   areaServed: "United States",
   serviceType: "Website Design & Local SEO",
   priceRange: "$$",

@@ -43,7 +43,7 @@ export default function Results() {
         </RevealItem>
       </RevealGroup>
       <div className="industries2">
-        Works for: <strong>Hair Salons · Pet Spas · Gyms</strong>
+        Works for: <strong>Landscapers · Salons · Gyms · Local Services</strong>
       </div>
     </section>
   );

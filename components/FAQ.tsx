@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: "What kind of businesses do you work with?",
-    a: "Hair salons, pet spas, and gyms only. That focus means we know your customers, your booking patterns, and what actually gets them through the door — not a generic template built for every type of local business.",
+    a: "Local service businesses only — landscapers, salons, gyms and trades like them. That focus means we know your customers, how they find you, and what actually gets them to call — not a generic template built for every kind of business.",
   },
   {
     q: "I already have a website — can you just fix it instead of rebuilding?",
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "Why do you only take one client per city per trade?",
-    a: "We can't help two salons — or two gyms — in the same city outrank each other. When you sign with us, your market and trade are protected: we won't take a competing business in your city. Spots fill up because of this, so if your city is open, it's worth moving quickly.",
+    a: "We can't help two landscapers — or two salons — in the same city outrank each other. When you sign with us, your market and trade are protected: we won't take a competing business in your city. Spots fill up because of this, so if your city is open, it's worth moving quickly.",
   },
   {
     q: "Do you guarantee results?",

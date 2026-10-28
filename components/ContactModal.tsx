@@ -143,7 +143,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
               {status === "error" && (
                 <p style={{ fontSize: '13px', color: '#ff6b35', background: 'rgba(255,107,53,0.1)', border: '1px solid rgba(255,107,53,0.2)', borderRadius: '10px', padding: '10px 12px', margin: 0 }}>
-                  Something went wrong. Please try again or email hello@mapdominate.com
+                  Something went wrong. Please try again or email cyril@mapdominate.com
                 </p>
               )}
 

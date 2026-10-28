@@ -34,11 +34,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.mapdominate.com"),
-  title: "MapDominate — Websites & Local SEO for Salons, Spas & Gyms.",
+  title: "MapDominate — Websites & Local SEO for Local Service Businesses.",
   description:
-    "We build fast, mobile-ready websites and optimize Google Business Profiles for hair salons, pet spas, and gyms — turning searches into phone calls. Free website audit.",
+    "We build fast, mobile-ready websites and optimize Google Business Profiles for landscapers, salons, gyms and other local service businesses — turning searches into phone calls. Free website audit.",
   keywords:
-    "salon website design, spa website design, gym website design, local SEO, Google Business Profile optimization, small business website builder, local service business marketing",
+    "landscaper website design, salon website design, gym website design, local SEO, Google Business Profile optimization, small business website builder, local service business marketing",
   alternates: {
     canonical: "https://www.mapdominate.com",
   },
@@ -50,14 +50,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.mapdominate.com",
-    title: "MapDominate — Websites & Local SEO for Salons, Spas & Gyms.",
+    title: "MapDominate — Websites & Local SEO for Local Service Businesses.",
     description:
       "We build fast, mobile-ready websites and Google Business Profiles that turn searches into phone calls.",
     siteName: "MapDominate",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MapDominate — Websites & Local SEO for Salons, Spas & Gyms.",
+    title: "MapDominate — Websites & Local SEO for Local Service Businesses.",
     description:
       "We build fast, mobile-ready websites and Google Business Profiles that turn searches into phone calls.",
   },
