@@ -65,7 +65,8 @@ export default function TermsPage() {
 
       <h2>Cancellation and refunds</h2>
       <p>
-        You can cancel a monthly fee at any time. Refunds of the build fee are covered by our{" "}
+        The $300 Website Build comes with a 7-day money-back promise. You can cancel a monthly fee at any time.
+        Refunds are covered by our{" "}
         <a href="/refund-policy">Refund &amp; Cancellation Policy</a>.
       </p>
 

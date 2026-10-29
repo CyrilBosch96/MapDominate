@@ -11,11 +11,17 @@ export const metadata: Metadata = {
 export default function RefundPolicyPage() {
   return (
     <LegalPage title="Refund & Cancellation Policy">
-      <h2>Website build fee</h2>
+      <h2>$300 Website Build: 7-day money-back</h2>
+      <p>
+        Not happy with your website? Ask within <strong>7 days of paying</strong> and you get a{" "}
+        <strong>full refund</strong>, no questions asked. Just reply to the email your files came in, or email us.
+      </p>
+
+      <h2>Other build fees</h2>
       <ul>
         <li>
-          <strong>Before we deliver your site</strong> (send you its files, or put it live for plans we
-          host):{" "}you can cancel and get a full refund. Just email us.
+          <strong>Before we deliver your site</strong> (put it live for plans we host):{" "}you can cancel and get a
+          full refund.
         </li>
         <li>
           <strong>After delivery:</strong>{" "}the build fee is not refundable, because the work has been
