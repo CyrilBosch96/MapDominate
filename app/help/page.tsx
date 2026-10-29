@@ -35,7 +35,7 @@ export default function HelpPage() {
 
       <h2>What you need</h2>
       <ul>
-        <li><strong>Your site files:</strong> the .zip we emailed you after your purchase.</li>
+        <li><strong>Your site files:</strong> the .zip we emailed you when your website was ready.</li>
         <li>
           <strong>A domain name</strong>{" "}(like yourbusiness.com). If you don&apos;t have one, buy it from any
           domain company, such as GoDaddy, Namecheap, Squarespace or Cloudflare. It&apos;s usually $10–20 a year.

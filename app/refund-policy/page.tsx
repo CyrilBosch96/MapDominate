@@ -13,8 +13,8 @@ export default function RefundPolicyPage() {
     <LegalPage title="Refund & Cancellation Policy">
       <h2>$300 Website Build: 7-day money-back</h2>
       <p>
-        Not happy with your website? Ask within <strong>7 days of paying</strong> and you get a{" "}
-        <strong>full refund</strong>, no questions asked. Just reply to the email your files came in, or email us.
+        Not happy with your website? Ask within <strong>7 days of receiving it</strong> and you get a{" "}
+        <strong>full refund</strong>, no questions asked. Just reply to the email your website came in, or email us.
       </p>
 
       <h2>Other build fees</h2>

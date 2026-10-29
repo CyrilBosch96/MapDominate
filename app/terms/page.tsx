@@ -49,9 +49,10 @@ export default function TermsPage() {
 
       <h2>Delivery</h2>
       <p>
-        This is a digital service; nothing is shipped. For a Website Build, we email you the site&apos;s files and a
-        link to the hosting guide after payment (most within 1–2 weeks). Before we send the files you can ask for reasonable changes to the text, photos and contact
-        details. For plans we host, we email you when your site is live.
+        This is a digital service; nothing is shipped. For a Website Build (up to 5 pages), you tell us your pages, text and
+        photos after payment, and we email you the site&apos;s files and a link to the hosting guide within 5
+        business days of receiving them. Before we send the files you can ask for reasonable changes to the text,
+        photos and contact details. For plans we host, we email you when your site is live.
       </p>
 
       <h2>Ownership</h2>
@@ -65,7 +66,7 @@ export default function TermsPage() {
 
       <h2>Cancellation and refunds</h2>
       <p>
-        The $300 Website Build comes with a 7-day money-back promise. You can cancel a monthly fee at any time.
+        The $300 Website Build comes with a 7-day money-back promise, counted from when you receive it. You can cancel a monthly fee at any time.
         Refunds are covered by our{" "}
         <a href="/refund-policy">Refund &amp; Cancellation Policy</a>.
       </p>
