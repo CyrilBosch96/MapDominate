@@ -8,13 +8,14 @@ interface PricingProps {
 
 const pricingTiers = [
   {
-    name: "Website Build", price: "$300", sub: "One-time build · $50/mo maintenance & hosting", featured: false,
+    name: "Website Build", price: "$300", sub: "One-time · you own it and host it on your own domain", featured: false,
     features: [
+      "Yours to keep — no monthly fee",
       "Custom-designed website (home, about, services, contact)",
       "Mobile-optimized, fast-loading",
       "SEO-friendly foundation (robots.txt, sitemap, on-page basics)",
       "Click-to-call info and appointment scheduler",
-      "No blog / content section",
+      "Free step-by-step hosting guide + setup call if you need it",
     ],
   },
   {
@@ -55,7 +56,8 @@ export default function Pricing({ onContactClick }: PricingProps) {
         <div className="pricing-heading-wrap">
           <h2>Four tiers, one goal: more calls.</h2>
           <p>
-            Website Build and Website + SEO are one-time builds with a low monthly maintenance fee.
+            Website Build is a one-time purchase: the site is yours, and we show you how to put it on
+            your own domain. Website + SEO is a one-time build with a low monthly maintenance fee.
             Website + Local SEO and the Full Package are monthly plans — because local rankings need
             ongoing work, not a one-time fix.
           </p>

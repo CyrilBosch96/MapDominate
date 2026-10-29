@@ -14,18 +14,19 @@ export default function RefundPolicyPage() {
       <h2>Website build fee</h2>
       <ul>
         <li>
-          <strong>Before your site goes live:</strong>{" "}you can cancel and get a full refund of the build fee. Just
-          email us.
+          <strong>Before we deliver your site</strong> (send you its files, or put it live for plans we
+          host):{" "}you can cancel and get a full refund. Just email us.
         </li>
         <li>
-          <strong>After your site goes live:</strong>{" "}the build fee is not refundable, because the work has been
+          <strong>After delivery:</strong>{" "}the build fee is not refundable, because the work has been
           delivered. We&apos;ll still fix anything that doesn&apos;t work as described.
         </li>
       </ul>
 
       <h2>Monthly fees</h2>
       <p>
-        You can cancel any monthly fee (hosting and maintenance, or a monthly SEO plan) at any time. It stops at
+        The $300 Website Build has no monthly fee. On plans that have one (hosting and maintenance, or a
+        monthly SEO plan) you can cancel it at any time. It stops at
         the end of the month you&apos;ve already paid for. Months already paid are not refunded.
       </p>
 

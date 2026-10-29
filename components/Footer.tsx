@@ -22,6 +22,7 @@ export default function Footer() {
           <div className="footer-col-label">CONTACT</div>
           <a href="/#audit">Get a Free Audit</a>
           <a href="/contact">Contact</a>
+          <a href="/help">Hosting help</a>
           <a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a>
         </div>
         <div className="footer-col2">
@@ -38,6 +39,7 @@ export default function Footer() {
           <a href="/privacy">Privacy</a>
           <a href="/refund-policy">Refund Policy</a>
           <a href="/contact">Contact</a>
+          <a href="/help">Hosting Help</a>
         </nav>
       </div>
     </footer>

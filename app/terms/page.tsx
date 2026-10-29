@@ -25,7 +25,12 @@ export default function TermsPage() {
         <a href="/#pricing">pricing section</a>, or in the offer we send you.
       </p>
       <ul>
-        <li><strong>Website builds</strong> are a one-time fee for the build, plus a monthly fee for hosting and maintenance.</li>
+        <li>
+          <strong>Website Build ($300)</strong> is a one-time payment. You get the finished site&apos;s files and host
+          them yourself on your own domain. Our free <a href="/help">hosting guide</a> walks you through it, and you
+          can book a free setup call if you get stuck. There is no monthly fee.
+        </li>
+        <li><strong>Other builds</strong> (such as Website + SEO) are a one-time fee plus a monthly fee for hosting and maintenance, as listed.</li>
         <li><strong>Monthly plans</strong> are billed every month until you cancel.</li>
       </ul>
 
@@ -44,16 +49,18 @@ export default function TermsPage() {
 
       <h2>Delivery</h2>
       <p>
-        This is a digital service; nothing is shipped. Most sites go live within 1–2 weeks of payment. We&apos;ll email you when your site is
-        live, and you can ask for reasonable changes to the text, photos and contact details.
+        This is a digital service; nothing is shipped. For a Website Build, we email you the site&apos;s files and a
+        link to the hosting guide after payment (most within 1–2 weeks). Before we send the files you can ask for reasonable changes to the text, photos and contact
+        details. For plans we host, we email you when your site is live.
       </p>
 
       <h2>Ownership</h2>
       <p>
         Once the build fee is paid, the content and design of your site are yours. You supply, or give us
         permission to use, your business name, logo, photos and text, and confirm you have the right to use them.
-        If you stop paying for hosting, we take the site offline, and on request we&apos;ll send you its files so
-        you can host it elsewhere.
+        Once you host a Website Build yourself, keeping it online (your domain and hosting account) is up to you.
+        For plans we host: if you stop paying for hosting, we take the site offline, and on request we&apos;ll send
+        you its files so you can host it elsewhere.
       </p>
 
       <h2>Cancellation and refunds</h2>
